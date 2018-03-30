@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.moonframework</groupId>
+    <artifactId>moon-framework2-bom</artifactId>
+    <packaging>pom</packaging>
+    <version>2.0.0</version>
+
+    <developers>
+        <developer>
+            <id>helldzl</id>
+            <name>Quzile</name>
+            <email>1949602@qq.com</email>
+        </developer>
+    </developers>
+    <modules>
+        <module>moon-framework2-parent</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <moonframework.version>2.0.0</moonframework.version>
+        <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
+        <spring-cloud.version>Edgware.SR2</spring-cloud.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Import dependency management from Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- The recommended way to get started using spring-cloud in your project is with a dependency management system -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- moon framework -->
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-amqp-starter</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-concurrent</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-core</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-crawler</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-elasticsearch-starter</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-fragment-security</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-intelligence</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-jcraft-starter</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-model-mongodb</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-model-mybatis-starter</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-security</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-validation</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-web</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.moonframework</groupId>
+                <artifactId>moon-web-micro-service</artifactId>
+                <version>${moonframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-api</artifactId>
+                <version>3.4.0</version>
+                <classifier></classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-chrome-driver</artifactId>
+                <version>3.4.0</version>
+                <classifier></classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-remote-driver</artifactId>
+                <version>3.4.0</version>
+                <classifier></classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-support</artifactId>
+                <version>3.4.0</version>
+                <classifier></classifier>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.5</version>
+                <classifier></classifier>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- Nexus Repository -->
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://nexus.budee.com/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://nexus.budee.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>

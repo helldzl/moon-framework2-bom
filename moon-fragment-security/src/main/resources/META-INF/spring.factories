@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.moonframework.fragment.security.autoconfigure.ShiroConfiguration
